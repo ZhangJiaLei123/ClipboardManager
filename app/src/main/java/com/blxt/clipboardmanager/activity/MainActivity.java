@@ -7,6 +7,9 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,6 +22,7 @@ import com.blxt.clipboardmanager.server.ClipListenServer;
 import com.blxt.clipboardmanager.unit.NotificationUtil;
 import com.blxt.clipboardmanager.bean.ClipTextBean;
 import com.blxt.greendao.DaoUtils;
+import com.blxt.quick.SettingFragment;
 import com.tencent.tauth.Tencent;
 
 import java.util.List;
@@ -38,7 +42,8 @@ public class MainActivity extends PermissionBaseActivity {
 
         initUI();
         initData();
-
+        SettingFragment settingFragment = SettingFragment.newInstance();
+        changeFragment(settingFragment);
     }
 
 
@@ -89,7 +94,14 @@ public class MainActivity extends PermissionBaseActivity {
 
     }
 
-
+    private void changeFragment(Fragment fragment){
+        //实例化碎片管理器对象
+        FragmentManager fm=getSupportFragmentManager();
+        FragmentTransaction ft=fm.beginTransaction();
+        //选择fragment替换的部分
+        ft.replace(R.id.cl_content,fragment);
+        ft.commit();
+    }
 
     /**
      * 隐藏主界面

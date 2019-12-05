@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">剪辑板助手</string>
+    <string name="app_version">v1.0</string>
+
 </resources>

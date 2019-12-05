@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView2"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="285dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:minLines="10"
-            android:padding="20dp"
-            android:text="  剪贴板助手不收集任何用户隐私，保证不在用户允许的情况下上传任何数据到服务器。但此助手需要部分非敏感权限，如不接受，请卸载此程序。建议将助手添加到白名单，否则会被系统杀死" />
+            android:id="@+id/cl_content"
+            >
+        </android.support.constraint.ConstraintLayout>
 
         <Button
             android:layout_width="match_parent"
