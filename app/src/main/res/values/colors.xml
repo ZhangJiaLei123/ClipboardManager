@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colornull">#00C3FFC9</color>
+    <color name="colorwite">#FFFFFFFF</color>
+    <color name="black_H">#FF494949</color>
+    <color name="black">#FF000000</color>
+    <color name="colorPrimary">#FF3DD6C4</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+<!--    编辑条颜色配置 -->
+    <color name="bj_edit">#636363</color>
+    <color name="bj_title">#C9C9C9</color>
+    <color name="bj_msg">#090909</color>
+</resources>
