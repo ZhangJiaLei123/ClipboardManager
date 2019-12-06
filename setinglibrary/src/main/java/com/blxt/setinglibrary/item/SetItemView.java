@@ -1,11 +1,10 @@
-package com.blxt.mview.item;
+package com.blxt.setinglibrary;
 
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 
-import com.blxt.clipboardmanager.R;
 
 /**
  * 设置页面的item

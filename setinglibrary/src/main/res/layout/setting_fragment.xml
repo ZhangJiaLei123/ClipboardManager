@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.blxt.quick.SettingFragment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    android:orientation="vertical">
 
 
     <RelativeLayout
@@ -79,13 +74,5 @@
 
     </ScrollView>
 
-<!--    <TextView-->
-<!--        android:id="@+id/_set_bottom_tip"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_weight="1"-->
-<!--        android:text="  剪贴板助手不收集任何用户隐私，保证不在用户允许的情况下上传任何数据到服务器。但此助手需要部分非敏感权限，如不接受，请卸载此程序。建议将助手添加到白名单，否则会被系统杀死" />-->
-<!--    -->
-    </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

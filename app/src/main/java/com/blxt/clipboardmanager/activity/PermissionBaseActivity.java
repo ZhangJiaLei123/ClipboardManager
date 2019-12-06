@@ -11,10 +11,11 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.blxt.clipboardmanager.server.NotificationCollectorService;
 
@@ -77,8 +78,11 @@ public abstract class PermissionBaseActivity extends AppCompatActivity {
         }
 
         // 通知栏使用权
-        String string = Settings.Secure.getString(getContentResolver(),
-                "enabled_notification_listeners");
+        String string = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.CUPCAKE) {
+            string = Settings.Secure.getString(getContentResolver(),
+                    "enabled_notification_listeners");
+        }
         if (string == null || !string.contains(NotificationCollectorService.class.getName())) {
             startActivity(new Intent(
                     "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));

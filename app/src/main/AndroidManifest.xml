@@ -37,14 +37,18 @@
         android:theme="@style/AppTheme">
         <service
             android:name=".server.FloatingServer"
+            android:launchMode="singleTop"
             android:enabled="true"
             android:exported="true"></service>
         <service
             android:name=".server.ClipListenServer"
+            android:launchMode="singleTop"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,6 +58,7 @@
 
         <service
             android:name=".server.NotificationCollectorService"
+            android:launchMode="singleTop"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>

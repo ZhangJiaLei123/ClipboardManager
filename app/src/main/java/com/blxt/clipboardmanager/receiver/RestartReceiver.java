@@ -13,8 +13,6 @@ import com.blxt.clipboardmanager.server.ClipListenServer;
  */
 public class RestartReceiver extends BroadcastReceiver {
 
-    public final static String STATUS_BAR_COVER_CLICK_ACTION="分享";
-
     public RestartReceiver(){
         Log.d("RestartReceiver","RestartReceiver");
     }
@@ -26,7 +24,7 @@ public class RestartReceiver extends BroadcastReceiver {
         String action = intent.getAction();
         if (Intent.ACTION_SCREEN_ON.equals(action)) { // 开屏
             Log.i("RestartReceiver","开屏");
-            ClipListenServer.start(context);
+        //    ClipListenServer.start(context);
         } else if (Intent.ACTION_SCREEN_OFF.equals(action)) { // 锁屏
             Log.d("RestartReceiver","锁屏");
         } else if (Intent.ACTION_USER_PRESENT.equals(action)) { // 解锁
@@ -38,11 +36,6 @@ public class RestartReceiver extends BroadcastReceiver {
             ClipListenServer.start(context);
         }
 
-        if (intent.getAction().equals(STATUS_BAR_COVER_CLICK_ACTION)) {
-            //在这里处理点击事件
-            Log.i("点击通知按钮",STATUS_BAR_COVER_CLICK_ACTION);
-
-        }
 
     }
 

@@ -38,17 +38,8 @@
             android:text="提示"
             android:textColor="#8A8686"/>
 
-
-
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/_item_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/_item_title_ic"
-        android:layout_marginTop="10dp"
-        android:background="#e9e5e5" />
 
     <ImageView
         android:id="@+id/_item_iright"

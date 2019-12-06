@@ -9,8 +9,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.blxt.clipboardmanager.Model;
 import com.blxt.clipboardmanager.bean.ClipTextBean;

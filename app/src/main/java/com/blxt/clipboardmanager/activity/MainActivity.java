@@ -1,28 +1,24 @@
 package com.blxt.clipboardmanager.activity;
 
 import android.app.Activity;
+import androidx.fragment.app.Fragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.blxt.clipboardmanager.Model;
 import com.blxt.clipboardmanager.R;
+import com.blxt.clipboardmanager.fragment.SettingFragment;
 import com.blxt.clipboardmanager.server.ClipListenServer;
 import com.blxt.clipboardmanager.unit.NotificationUtil;
 import com.blxt.clipboardmanager.bean.ClipTextBean;
 import com.blxt.greendao.DaoUtils;
-import com.blxt.quick.SettingFragment;
 import com.tencent.tauth.Tencent;
 
 import java.util.List;
@@ -50,8 +46,8 @@ public class MainActivity extends PermissionBaseActivity {
     public void initUI() {
         activity = this;
 
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(getWindow().getDecorView().findViewById(android.R.id.content),InputMethodManager.SHOW_FORCED);
+      //  InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+      //  imm.showSoftInput(getWindow().getDecorView().findViewById(android.R.id.content),InputMethodManager.SHOW_FORCED);
     }
 
 
@@ -62,7 +58,10 @@ public class MainActivity extends PermissionBaseActivity {
 
 
         // 首次运行时,检查剪辑板
-        ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        ClipboardManager cm = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        }
         ClipData data = cm.getPrimaryClip();
 
         DaoUtils daoUtils = new DaoUtils(context);

@@ -9,21 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.blxt.clipboardmanager.R;
+import com.blxt.setinglibrary.BaseSetItemView;
 
-public class SettingFragment extends Fragment {
+public class BaseSettingFragment extends Fragment  {
 
     private SettingViewModel mViewModel;
     private View rootView;
 
-    public static SettingFragment newInstance() {
-        return new SettingFragment();
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.setting_fragment, container, false);
+       // rootView = inflater.inflate(R.layout.setting_fragment, container, false);
         return rootView;
     }
 
@@ -32,9 +28,22 @@ public class SettingFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SettingViewModel.class);
         mViewModel.setRootView(rootView);
-        mViewModel.addItem();
-        mViewModel.attachItem();
+
+
         // TODO: Use the ViewModel
     }
+
+    /**
+     * 设置监听回调,需要在addItem()前使用
+     * @param clickListener
+     */
+    public void setClickListener(BaseSetItemView.OnClickListenerCallBack clickListener){
+        mViewModel.setClickListener(clickListener);
+    }
+
+    public void addItem(View view){
+        mViewModel.addItem(view);
+    }
+
 
 }

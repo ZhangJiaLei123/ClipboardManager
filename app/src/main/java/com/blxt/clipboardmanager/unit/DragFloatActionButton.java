@@ -11,12 +11,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 import com.blxt.clipboardmanager.R;
 
 /**
  * 系统级 全局悬浮按钮
  */
-public class DragFloatActionButton extends android.support.v7.widget.AppCompatImageView implements View.OnTouchListener, View.OnClickListener {
+public class DragFloatActionButton extends AppCompatImageView implements View.OnTouchListener, View.OnClickListener {
 
     public static String TAG = "DragFloatActionButton";
     private Context context;

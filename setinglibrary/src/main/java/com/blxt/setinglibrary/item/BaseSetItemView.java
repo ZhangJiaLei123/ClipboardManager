@@ -1,4 +1,4 @@
-package com.blxt.mview.item;
+package com.blxt.setinglibrary;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -28,7 +28,6 @@ public class BaseSetItemView extends LinearLayout {
     protected TextView tv_title; //item的title文字
     protected TextView tv_hint; //item的内容提示文字
     protected ImageView iv_bottom; // 底部分割线
-    protected boolean isbootom = true;//是否显示底部的下划线
 
 
     /** 关联子视图 */
@@ -43,15 +42,7 @@ public class BaseSetItemView extends LinearLayout {
 
     }
 
-
-
-    /** 判断是否是底部，底部就隐藏分隔符 */
     protected void initview() {
-        if(isbootom){
-            iv_bottom.setVisibility(View.VISIBLE);
-        }else{
-            iv_bottom.setVisibility(View.GONE);
-        }
 
         int visibility = this.getVisibility();
         if(subView != null){
